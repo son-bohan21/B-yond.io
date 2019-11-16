@@ -1,0 +1,37 @@
+---
+
+layout: default
+title: Playbacks
+permalinks: /playbacks/
+---
+
+<div>
+    playbacks page
+<div class="foundation-player no-2 normal">
+              <ul class="player menu simple noselect">
+                <li class="player-button play">
+                    <i class="fas fa-play"></i>
+                </li>
+                <li class="player-button rewind">
+                 <i class="fas fa-sync-alt"></i>
+                </li>
+                <li class="player-button volume">
+                  <i class="fas fa-pause"></i>
+                </li>
+                <li class="player-status time">
+                  <span class="elapsed">00:00</span>
+                </li>
+                <li class="player-progress">
+                  <div class="progress round" role="progressbar">
+                    <div class="progress-meter played" style="padding: 0px 9px; width: 0%;"></div>
+                  <div class="progress-meter buffered" style="padding: 0px 9px; width: 200px; left: 0px;"></div></div>
+                </li>
+                <li class="player-status time">
+                  <span class="remains">-01:00</span>
+                </li>
+              </ul>
+              <audio preload="auto">
+                <source  src="{{ site.baseurl }}/assets/audio/climbing.m4a">
+              </audio>
+            </div>
+</div>
