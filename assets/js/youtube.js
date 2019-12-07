@@ -24,10 +24,19 @@ $(document).ready(function(){
       }
     
     function mainVid(id) {
-    $('#video-player').html(`
-     <iframe width="700" height="350" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    `);
-  }
+        $('#video-player').html(`
+         <iframe width="700" height="350" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        `);
+    }
+    
+    $('#top-menu-search-input').keypress(function( event ) {
+        console.log(event)
+      if ( event.which == 13 ) {
+         $("#top-menu-search-button").click();
+      }
+    
+      
+    });
   
   
   function resultsLoop(data) {
