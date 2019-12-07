@@ -1,4 +1,11 @@
 
 body {
-    background-color: #696969;
+/*    background-image: url("/assets/img/hardcore-bg.jpg");*/
+    background-repeat: repeat;
+    background-color: #cccccc;
+}
+
+hr {
+    border-bottom-color: white;
+    margin-bottom: 1em;
 }
