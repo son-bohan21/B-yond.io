@@ -9,3 +9,7 @@ hr {
     border-bottom-color: white;
     margin-bottom: 1em;
 }
+
+hr:last-child {
+    border-bottom: none;
+}

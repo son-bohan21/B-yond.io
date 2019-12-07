@@ -5,7 +5,7 @@ $(document).ready(function(){
     var channelId= "UCHjMHgqs8GO0qYPL4JMMBvw";
     var URL= "https://www.googleapis.com/youtube/v3/search";
     
-    var options = {
+    var searchOptions = {
     part: 'snippet,id',
     key: key,
     maxResults: 20,
@@ -13,9 +13,9 @@ $(document).ready(function(){
     order: 'date'
   };
     
-     loadVids();
+     loadVids(searchOptions);
   
-   function loadVids() {
+   function loadVids(options) {
           $.getJSON(URL, options, function (data) {
               var id = data.items[0].id.videoId;
               mainVid(id);
@@ -31,6 +31,7 @@ $(document).ready(function(){
   
   
   function resultsLoop(data) {
+      $('#video-list').children().remove();
     
     $.each(data.items, function (i, item) {
       
@@ -53,6 +54,7 @@ $(document).ready(function(){
         <p>${desc}</p>
     </div>
 </div>
+
 <hr>
 
      
@@ -67,4 +69,25 @@ $(document).ready(function(){
     mainVid(id);
   });
     
+  $('#top-menu-search-button').on('click', function(e) {
+      e.preventDefault();
+      var searchQuery = $('#top-menu-search-input').val().trim();
+      if (searchQuery.length === 0) {
+          console.log('there is nothing to search, dont play with me bro');
+          return;
+      }
+      
+      console.log('top menu button was clicked, searchQuery: ', searchQuery);
+      
+      var topBarSearchOptions = {
+        part: 'snippet,id',
+        q: searchQuery,
+        key: key,
+        maxResults: 50,
+        order: 'date',
+        i18nLanguage: 'en'
+      };
+      
+         loadVids(topBarSearchOptions);
+  })    
 })

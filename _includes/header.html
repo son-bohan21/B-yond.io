@@ -1,4 +1,10 @@
-<div class="top-bar">
+<div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle></button>
+  <div class="title-bar-title">Gamers Territory</div>
+    
+</div>
+
+<div id="top-menu" class="top-bar">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
 
@@ -20,8 +26,8 @@
             </li>
             {%- endif -%}
             {%- endfor -%}
-            <li><input type="search" placeholder="Search"></li>
-            <li><button type="button" class="hollow button">Search</button></li>
+            <li><input id="top-menu-search-input" type="search" placeholder="Search"></li>
+            <li><button id="top-menu-search-button" type="button" class="hollow button">Search</button></li>
         </ul>
     </div>
 </div>
